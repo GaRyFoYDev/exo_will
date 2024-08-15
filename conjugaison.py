@@ -1,11 +1,14 @@
 import json
 import random
 from rich.console import Console
+from time import sleep
+import subprocess
+
 
 console = Console()
 
 # Charger les conjugaisons à partir du fichier JSON
-with open('conjugaison.json', 'r') as f:
+with open('conjugaison.json', 'r',encoding='utf-8') as f:
     conjugaisons = json.load(f)
 
 verbes = list(conjugaisons.keys())
@@ -14,6 +17,7 @@ verbes = list(conjugaisons.keys())
 utilise = set()
 dernier_verbe = []
 dernier_temps = []
+
 
 def choisir_exercice():
     global utilise, dernier_verbe, dernier_temps
@@ -28,6 +32,7 @@ def choisir_exercice():
 
     while True:
         verbe = random.choice(verbes)
+
         temps = random.choice(list(conjugaisons[verbe].keys()))
         if len(dernier_verbe) == len(list(conjugaisons.keys())):
             dernier_verbe = []
@@ -41,10 +46,12 @@ def choisir_exercice():
             dernier_temps.append(temps)
             return verbe, temps
 
+
 def exercice():
     points = 0
     verbe, temps = choisir_exercice()
-    console.print(f"Conjugue le verbe '{verbe}' au temps '{temps}':", style="bold cyan")
+    console.print(
+        f"Conjugue le verbe '{verbe}' au temps '{temps}':", style="bold cyan")
 
     # Afficher la réponse correcte pour chaque personne
     for i, personne in enumerate(['je', 'tu', 'il', 'nous', 'vous', 'ils']):
@@ -54,18 +61,28 @@ def exercice():
         if len(verification) == 2:
             if reponse.strip().lower() == verification[1].lower():
                 console.print("Correct!", style="bold green")
+                sleep(1)
+                subprocess.run(["powershell", "-Command", "Clear-Host"])
                 points += 1
             else:
+
                 console.print(
                     f"Incorrect. La bonne réponse est: {verification[1]}", style="bold red")
+                sleep(1)
+                subprocess.run(["powershell", "-Command", "Clear-Host"])
         elif len(verification) > 2:
             if temps.split()[0] != 'subjonctif':
                 if reponse.strip().lower() == f'{verification[1].lower()} {verification[2].lower()}':
                     console.print("Correct!", style="bold green")
+                    sleep(1)
+                    subprocess.run(["powershell", "-Command", "Clear-Host"])
                     points += 1
                 else:
+
                     console.print(
                         f"Incorrect. La bonne réponse est: {verification[1].lower()} {verification[2].lower()}", style="bold red")
+                    sleep(1)
+                    subprocess.run(["powershell", "-Command", "Clear-Host"])
             else:
                 global subjonctif_input
                 if verification[0].lower() == 'que':
@@ -75,16 +92,25 @@ def exercice():
 
                 if reponse.strip().lower() == subjonctif_input:
                     console.print("Correct!", style="bold green")
+                    sleep(1)
+                    subprocess.run(["powershell", "-Command", "Clear-Host"])
                     points += 1
                 else:
                     if verification[0].lower() == 'que':
                         console.print(
                             f"Incorrect. La bonne réponse est: {verification[0].lower()} {verification[1].lower()} {verification[2].lower()}", style="bold red")
+                        sleep(1)
+                        subprocess.run(
+                            ["powershell", "-Command", "Clear-Host"])
                     else:
                         console.print(
                             f"Incorrect. La bonne réponse est: {verification[0].lower()}{verification[1].lower()} {verification[2].lower()}", style="bold red")
+                        sleep(1)
+                        subprocess.run(
+                            ["powershell", "-Command", "Clear-Host"])
 
     return points
+
 
 def main():
     try:
@@ -103,6 +129,7 @@ def main():
             console.print(
                 f"Félicitations, vous avez atteint {goal} points!", style="bold green")
             break
+
 
 if __name__ == "__main__":
     main()

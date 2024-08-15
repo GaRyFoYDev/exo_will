@@ -8,7 +8,7 @@ import subprocess
 console = Console()
 
 # Charger les conjugaisons à partir du fichier JSON
-with open('conjugaison.json', 'r',encoding='utf-8') as f:
+with open('conjugaison.json', 'r', encoding='utf-8') as f:
     conjugaisons = json.load(f)
 
 verbes = list(conjugaisons.keys())
@@ -61,27 +61,27 @@ def exercice():
         if len(verification) == 2:
             if reponse.strip().lower() == verification[1].lower():
                 console.print("Correct!", style="bold green")
-                sleep(1)
+                sleep(0.7)
                 subprocess.run(["powershell", "-Command", "Clear-Host"])
                 points += 1
             else:
 
                 console.print(
                     f"Incorrect. La bonne réponse est: {verification[1]}", style="bold red")
-                sleep(1)
+                sleep(0.7)
                 subprocess.run(["powershell", "-Command", "Clear-Host"])
         elif len(verification) > 2:
             if temps.split()[0] != 'subjonctif':
                 if reponse.strip().lower() == f'{verification[1].lower()} {verification[2].lower()}':
                     console.print("Correct!", style="bold green")
-                    sleep(1)
+                    sleep(0.7)
                     subprocess.run(["powershell", "-Command", "Clear-Host"])
                     points += 1
                 else:
 
                     console.print(
                         f"Incorrect. La bonne réponse est: {verification[1].lower()} {verification[2].lower()}", style="bold red")
-                    sleep(1)
+                    sleep(0.7)
                     subprocess.run(["powershell", "-Command", "Clear-Host"])
             else:
                 global subjonctif_input
@@ -92,20 +92,20 @@ def exercice():
 
                 if reponse.strip().lower() == subjonctif_input:
                     console.print("Correct!", style="bold green")
-                    sleep(1)
+                    sleep(0.7)
                     subprocess.run(["powershell", "-Command", "Clear-Host"])
                     points += 1
                 else:
                     if verification[0].lower() == 'que':
                         console.print(
                             f"Incorrect. La bonne réponse est: {verification[0].lower()} {verification[1].lower()} {verification[2].lower()}", style="bold red")
-                        sleep(1)
+                        sleep(0.7)
                         subprocess.run(
                             ["powershell", "-Command", "Clear-Host"])
                     else:
                         console.print(
                             f"Incorrect. La bonne réponse est: {verification[0].lower()}{verification[1].lower()} {verification[2].lower()}", style="bold red")
-                        sleep(1)
+                        sleep(0.7)
                         subprocess.run(
                             ["powershell", "-Command", "Clear-Host"])
 

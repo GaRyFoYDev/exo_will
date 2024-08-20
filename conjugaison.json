@@ -2133,7 +2133,7 @@
             "ils courent"
         ],
         "passé composé": [
-            "j' ai couru",
+            "j'ai couru",
             "tu as couru",
             "il a couru",
             "nous avons couru",
@@ -2173,7 +2173,89 @@
             "ils coururent"
         ],
         "plus-que-parfait": [
-            "j' étais sorti",
+            "j'avais couru",
+            "tu avais couru",
+            "il avait couru",
+            "nous avions couru",
+            "vous aviez couru",
+            "ils avaient couru"
+        ],
+        "subjonctif présent": [
+            "que je coure",
+            "que tu coures",
+            "qu'il coure",
+            "que nous courions",
+            "que vous couriez",
+            "qu'ils courent"
+        ],
+        "conditionnel passé": [
+            "j'aurais couru",
+            "tu aurais couru",
+            "il aurait couru",
+            "nous aurions couru",
+            "vous auriez couru",
+            "ils auraient couru"
+        ],
+        "futur antérieur": [
+            "j'aurai couru",
+            "tu auras couru",
+            "il aura couru",
+            "nous aurons couru",
+            "vous aurez couru",
+            "ils auront couru"
+        ]
+    },
+    "sortir": {
+        "présent": [
+            "je sors",
+            "tu sors",
+            "il sort",
+            "nous sortons",
+            "vous sortez",
+            "ils sortent"
+        ],
+        "passé composé": [
+            "je suis sorti",
+            "tu es sorti",
+            "il est sorti",
+            "nous sommes sortis",
+            "vous êtes sortis",
+            "ils sont sortis"
+        ],
+        "imparfait": [
+            "je sortais",
+            "tu sortais",
+            "il sortait",
+            "nous sortions",
+            "vous sortiez",
+            "ils sortaient"
+        ],
+        "futur simple": [
+            "je sortirai",
+            "tu sortiras",
+            "il sortira",
+            "nous sortirons",
+            "vous sortirez",
+            "ils sortiront"
+        ],
+        "conditionnel présent": [
+            "je sortirais",
+            "tu sortirais",
+            "il sortirait",
+            "nous sortirions",
+            "vous sortiriez",
+            "ils sortiraient"
+        ],
+        "passé simple": [
+            "je sortis",
+            "tu sortis",
+            "il sortit",
+            "nous sortîmes",
+            "vous sortîtes",
+            "ils sortirent"
+        ],
+        "plus-que-parfait": [
+            "j'étais sorti",
             "tu étais sorti",
             "il était sorti",
             "nous étions sortis",
@@ -2183,10 +2265,10 @@
         "subjonctif présent": [
             "que je sorte",
             "que tu sortes",
-            "qu' il sorte",
+            "qu'il sorte",
             "que nous sortions",
             "que vous sortiez",
-            "qu' ils sortent"
+            "qu'ils sortent"
         ],
         "conditionnel passé": [
             "je serais sorti",
